@@ -78,6 +78,7 @@ header .search button {
     border-radius: 16px;
     position: absolute;
     bottom: -88px;
+    z-index: 1;
 }
 
 .ipInfo p {
@@ -101,4 +102,9 @@ header .search button {
 
 .ipInfo .info:not(:last-child) {
     border-right: 1px solid var(--darkGray);
+}
+
+#mapid { 
+    height: 63%; 
+    z-index: 0;
 }
