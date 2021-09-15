@@ -30,3 +30,9 @@ Setting up the map
 First we’ll initialize the map and set its view to our chosen geographical coordinates and a zoom level:
 
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((res) => res.json())
+// .then((data) => { 
+//     console.log(data)
+// })
