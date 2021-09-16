@@ -1,8 +1,3 @@
-## Layout
-
-- Mobile: 375px
-
-
 Preparing your page
 Before writing any code for the map, you need to do the following preparation steps on your page:
 
@@ -36,3 +31,12 @@ var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 // .then((data) => { 
 //     console.log(data)
 // })
+
+
+// const apiUrlTest = 'https://jsonplaceholder.typicode.com/users'
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
