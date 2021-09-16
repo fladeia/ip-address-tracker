@@ -12,8 +12,11 @@ let longitude = -49.28532
 // ----------- map 
 const apiUrlMap = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 const attribution = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>'
+const markerIcon = L.icon({
+    iconUrl: "./images/icon-location.svg"
+})
 let mymap = L.map('mapid').setView([latitude, longitude], 14);
-let marker = L.marker([latitude, longitude]).addTo(mymap);
+let marker = L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);
 
 L.tileLayer(apiUrlMap, { attribution }).addTo(mymap);
 // ----------- map 
@@ -42,7 +45,6 @@ async function fetchData(ip) {
     longitude = data.location.lng
     mymap.setView([latitude, longitude])
     marker.setLatLng([latitude, longitude])
-
 }
 
 btn.addEventListener('click', () => {

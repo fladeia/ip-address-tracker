@@ -17,7 +17,6 @@ body {
     max-width: 1440px;
     height: 100vh;
     background-color: rgba(0, 255, 255, 0.158);
-    /* overflow: hidden; */
 }
 
 header {
@@ -29,7 +28,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-around; */
     position: relative;
 }
 
@@ -59,7 +57,7 @@ header .search input::placeholder {
     color: var(--darkGray);
 }
 
-header .search button {
+header .search .btn {
     width: 60px;
     padding: 20px;
     border-radius: 0 18px 18px 0;
@@ -67,21 +65,28 @@ header .search button {
     border: hidden;
 }
 
-.ipInfo {
-    width: 70%;
-    height: 162px;
+#ip, .btn {
+    cursor: pointer;
+}
+
+.info-container {
+    width: 80%;
+    padding: 30px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     background-color: #fff;
     color: #000;
     border-radius: 16px;
-    position: absolute;
-    bottom: -88px;
+    margin-top: 36px;
     z-index: 1;
 }
 
-.ipInfo p {
+.info-container .info {
+    flex: 1;
+    height: 100%;
+    margin-left: 30px;
+}
+
+.info-container p {
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 500;
@@ -90,21 +95,49 @@ header .search button {
     letter-spacing: 1px;
 }
 
-.ipInfo span {
+.info-container span {
     font-size: 26px;
     font-weight: 500;
-}
-
-.ipInfo .info {
-    width: 220px;
-    height: 78px;
-}
-
-.ipInfo .info:not(:last-child) {
-    border-right: 1px solid var(--darkGray);
 }
 
 #mapid { 
     height: 63%; 
     z-index: 0;
+}
+
+@media (min-width: 751px) {
+    .info-container .info:not(:last-child) {
+        border-right: 1px solid var(--darkGray);
+    }
+}
+
+@media (max-width: 750px) {
+
+    header .title h1 {
+        font-size: 24px;
+    }
+
+    header .search input {
+        width: 80%;
+    }
+
+    .info-container {
+        max-width: 80%;
+        padding: 18px;
+        flex-direction: column;
+        text-align: center;
+        bottom: -222px;
+    }
+
+    .info-container .info {
+        margin: 0 0 18px 0;
+    }
+    
+    .info-container span {
+        font-size: 18px;
+    }
+
+    header .search input::placeholder {
+        font-size: 13px;
+    }
 }
