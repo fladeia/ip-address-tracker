@@ -37,12 +37,14 @@ async function fetchData(ip) {
     res = await fetch(`https://geo.ipify.org/api/v1?apiKey=at_nl22wkvVRmAYq4wTQ6VoJOGx3es1p&ipAddress=${ip}`)
     data = await res.json()
 
+    const { city, country, postalCode, timezone, lat, lng} = data.location
+
     ipShow.innerHTML = data.ip
-    locationShow.innerHTML = `${data.location.city}, ${data.location.country} ${data.location.postalCode}`
-    utcShow.innerHTML = `UTC${data.location.timezone}`
+    locationShow.innerHTML = `${city}, ${country} ${postalCode}`
+    utcShow.innerHTML = `UTC${timezone}`
     ispShow.innerHTML = data.isp
-    latitude = data.location.lat
-    longitude = data.location.lng
+    latitude = lat
+    longitude = lng
     mymap.setView([latitude, longitude])
     marker.setLatLng([latitude, longitude])
 }
