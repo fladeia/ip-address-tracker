@@ -16,19 +16,18 @@ body {
 .container {
     max-width: 1440px;
     height: 100vh;
-    background-color: rgba(0, 255, 255, 0.158);
+    display: grid;
+    grid-template-rows: 280px 1fr;
 }
 
 header {
     width: 100%;
-    height: 280px;
     background: url("./images/pattern-bg.png") #000 no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
 header .title h1 {
@@ -83,6 +82,9 @@ header .search .btn {
 .info-container .info {
     flex: 1;
     height: 100%;
+}
+
+.info-container .info:not(:first-child) {
     margin-left: 30px;
 }
 
@@ -98,32 +100,35 @@ header .search .btn {
 .info-container span {
     font-size: 26px;
     font-weight: 500;
+    padding-right: 30px;
 }
 
 #mapid { 
-    height: 63%; 
     z-index: 0;
 }
 
-@media (min-width: 751px) {
+@media (min-width: 821px) {
     .info-container .info:not(:last-child) {
         border-right: 1px solid var(--darkGray);
     }
 }
 
-@media (max-width: 750px) {
-
+@media (max-width: 820px) {
+    header {
+        background-size: cover;
+    }
     header .title h1 {
         font-size: 24px;
     }
 
     header .search input {
-        width: 80%;
+        width: 85%;
     }
-
+    
     .info-container {
-        max-width: 80%;
         padding: 18px;
+        margin-top: 24px;
+        min-width: 316px;
         flex-direction: column;
         text-align: center;
         bottom: -222px;
@@ -132,9 +137,15 @@ header .search .btn {
     .info-container .info {
         margin: 0 0 18px 0;
     }
+
+    .info-container p {
+        font-size: 11px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
     
     .info-container span {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     header .search input::placeholder {

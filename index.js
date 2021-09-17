@@ -15,8 +15,8 @@ const attribution = 'Map data &copy; <a href="https://www.openstreetmap.org/copy
 const markerIcon = L.icon({
     iconUrl: "./images/icon-location.svg"
 })
-let mymap = L.map('mapid').setView([latitude, longitude], 14);
-let marker = L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);
+const mymap = L.map('mapid', {zoomControl: false}).setView([latitude, longitude], 14);
+const marker = L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);
 
 L.tileLayer(apiUrlMap, { attribution }).addTo(mymap);
 // ----------- map 
